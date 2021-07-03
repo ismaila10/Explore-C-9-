@@ -32,3 +32,30 @@ public class Categorie
         init => dateCreation = value;
     }
 }
+
+record Order
+{
+    private Produit produit { get; init; }
+    private DateTime dateCreation { get; init; }
+    private string description { get; init; }
+
+    public Produit Produit
+    {
+        get => produit;
+        init => produit = (value ?? throw new ArgumentException(nameof(Produit)));
+    }
+
+    public string Description
+    {
+        get => description;
+        init => description = (value ?? throw new ArgumentException(nameof(Description)));
+    }
+
+    public DateTime DateCreation
+    {
+        get => dateCreation;
+        init => dateCreation = value;
+    }
+}
+
+

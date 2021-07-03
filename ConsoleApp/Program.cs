@@ -6,8 +6,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            // Setter init Part 1
-            var user = new Produit
+                                                                        /* Setter init Part 1 */
+            var prod = new Produit
             {
                 Name = "pc",
                 Description = "MacBook Pro",
@@ -19,7 +19,7 @@ namespace ConsoleApp
             //user.name = "clavier";
 
 
-            // Setter init Part 2
+                                                                        /* Setter init Part 2 */
             var categorie = new Categorie
             {
                 Name = "Informatique",
@@ -27,6 +27,22 @@ namespace ConsoleApp
                 //Description = null
                 DateCreation = DateTime.Now
             };
+
+            //Console.ReadKey(true);
+
+
+                                                        /* Types d’enregistrements => Utilisation de record Part 1 */
+            var order = new Order
+            {
+                Produit = prod,
+                Description = "Qualité supérieure",
+                DateCreation = DateTime.Now
+            };
+            
+            // record et with =>  Copier les valeurs des propriétés de l'objet order dans la variable newOrder avec possibilité d'update les valeurs passées aprés le with sur l'objet newOrder
+            var newOrder = order with { Description = "Top" };
+            Console.WriteLine(order);
+            Console.WriteLine(newOrder);
 
             Console.ReadKey(true);
         }
