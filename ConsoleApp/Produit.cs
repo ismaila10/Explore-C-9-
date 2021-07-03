@@ -17,7 +17,7 @@ public class Categorie
 {
     private string name { get; init; }
     private DateTime dateCreation { get; init; }
-    private string description { get; init; }
+    private string description { get; init; }   
 
     public string Name
     {
@@ -39,7 +39,7 @@ public class Categorie
 }
 
 record Order
-{
+{   
     private Produit produit { get; init; }
     private DateTime dateCreation { get; init; }
     private string description { get; init; }
@@ -62,5 +62,7 @@ record Order
         init => dateCreation = value;
     }
 }
+
+public record Person(string FirstName, string LastName);
 
 
