@@ -55,10 +55,18 @@ namespace ConsoleApp
            
 
 
-            /* vyuguygfusyuyhiuyhuibuin */
-            var chien = new Chien();
+                                                            /* Nouveauté au niveau du Pattern Matching  */
+            Console.WriteLine(Crier(new Chat())); // => miaule
+            Console.WriteLine(Crier(new Chien())); // => aboie
+            //Console.WriteLine(Crier(null)); // => NotImplementededxception
 
-            Console.WriteLine(Crier(new Chat()));
+
+                                                            /* Utilisation de is not  */
+            var chien = new Chien();
+            if(chien is not Animal) // is not => à la place de (!(chien is Animal))
+                Console.WriteLine("Oups pas un animal");
+            else
+                Console.WriteLine("Voilà c'est ce que je me disais !");
 
             Console.ReadKey(true);
         }
