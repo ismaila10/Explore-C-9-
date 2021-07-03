@@ -63,6 +63,6 @@ record Order
     }
 }
 
-public record Person(string FirstName, string LastName);
+public record Person(string FirstName, string LastName, string[] PhoneNumbers);
 
 

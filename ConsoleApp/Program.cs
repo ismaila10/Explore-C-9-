@@ -42,12 +42,24 @@ namespace ConsoleApp
             Console.WriteLine(newOrder);
 
 
-            /* Syntaxe de position pour la définition de propriété */
-            Person person = new("Ismaila", "Diallo");
-            Console.WriteLine(person);
+                                                                    /* Syntaxe de position pour la définition de propriété */
+            //Person person = new("Ismaila", "Diallo");
+            //Console.WriteLine(person);
 
 
-            //                                            /* Types d’enregistrements => Déconstructeur(deconstruct) */
+
+                                                                   /* Égalité des valeurs */
+            var phoneNumbers = new string[2];
+            Person person1 = new("Ismaila", "Diallo", phoneNumbers);
+            Person person2 = new("Ismaila", "Diallo", phoneNumbers);
+            Console.WriteLine(person1 == person2); // output: True
+
+            person1.PhoneNumbers[0] = "555-1234";
+            Console.WriteLine(person1 == person2); // output: True
+
+
+
+            /* Types d’enregistrements => Déconstructeur(deconstruct) */
             //Produit prod1 = new("clavier", "Cool", DateTime.Now); // à la place de => Produit prod1 = new Produit("clavier", "Cool", DateTime.Now);
 
             //// Utilisation du Déconstructeur 
