@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp
 {
@@ -11,24 +12,20 @@ namespace ConsoleApp
             {
                 Name = "pc",
                 Description = "MacBook Pro",
-                Price = 1600,
                 DateCreation = DateTime.Now
             };
 
-            // Error =>  Impossible de modifier les propriétés de la classe après initialisation equivaut à readonly
-            //user.name = "clavier";
+            // user.name = "clavier";   Error =>  Impossible de modifier les propriétés de la classe après initialisation equivaut à readonly
 
 
-                                                                        /* Setter init Part 2 */
+            /* Setter init Part 2 */
             var categorie = new Categorie
             {
                 Name = "Informatique",
-                // Déclenche une ArgumentNullException due à la condition posée lors de l'initialisation de la propriété 
-                //Description = null
+                // Description = null, => Déclenche une ArgumentNullException due à la condition posée lors de l'initialisation de la propriété 
                 DateCreation = DateTime.Now
             };
 
-            //Console.ReadKey(true);
 
 
                                                         /* Types d’enregistrements => Utilisation de record Part 1 */
@@ -44,7 +41,20 @@ namespace ConsoleApp
             Console.WriteLine(order);
             Console.WriteLine(newOrder);
 
+
+                                                        /* Types d’enregistrements => Déconstructeur(deconstruct) */
+            Produit prod1 = new("clavier", "Cool", DateTime.Now); // à la place de => Produit prod1 = new Produit("clavier", "Cool", DateTime.Now);
+
+            // Utilisation du Déconstructeur 
+            var (name, description, dateCreation) = prod1;
+
+            Console.WriteLine($"Nom: {name} - Description: {description} - Date de création: {dateCreation}");
+
+            List<Produit> prodList = new(); // à la place de => List<Produit> prodList = new List<Produit>()
+            List<Order> orderList = new();
+
             Console.ReadKey(true);
+
         }
     }
 }

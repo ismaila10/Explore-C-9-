@@ -4,8 +4,13 @@ public class Produit
 {
     public string Name { get; init; }
     public string Description { get; init; }
-    public float Price { get; init; }
     public DateTime DateCreation { get; init; }
+
+    public Produit() { }
+
+    public Produit(string name, string description, DateTime dateCreation) => (Name, Description, DateCreation) = (name, description, dateCreation);
+
+    public void Deconstruct(out string name, out string description, out DateTime dateCreation) => (name, description, dateCreation) = (Name, Description, DateCreation);
 }
 
 public class Categorie
