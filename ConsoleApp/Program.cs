@@ -7,7 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            //Setter init Part 1 */
+            /*Setter init Part 1 */
            var prod = new Produit
            {
                Name = "pc",
@@ -42,33 +42,42 @@ namespace ConsoleApp
             Console.WriteLine(newOrder);
 
 
-                                                                    /* Syntaxe de position pour la définition de propriété */
-            //Person person = new("Ismaila", "Diallo");
-            //Console.WriteLine(person);
+            /* Syntaxe de position pour la définition de propriété */
+            /*Person person = new("Ismaila", "Diallo");
+            Console.WriteLine(person);*/
 
 
 
-                                                                   /* Égalité des valeurs */
-            var phoneNumbers = new string[2];
+            /* Égalité des valeurs */
+            /*var phoneNumbers = new string[2];
             Person person1 = new("Ismaila", "Diallo", phoneNumbers);
             Person person2 = new("Ismaila", "Diallo", phoneNumbers);
             Console.WriteLine(person1 == person2); // output: True
 
             person1.PhoneNumbers[0] = "555-1234";
-            Console.WriteLine(person1 == person2); // output: True
+            Console.WriteLine(person1 == person2); // output: True*/
+
+
+            /* Heritage */
+            Person teacher = new Teacher("Maxwell", "Gradel", 3);
+            Person student = new Student("Ismaila", "Diallo", 3);
+            Console.WriteLine(teacher == student); // output: False
+
+            Student student2 = new Student("Ismaila", "Diallo", 3);
+            Console.WriteLine(student2 == student); // output: True
 
 
 
             /* Types d’enregistrements => Déconstructeur(deconstruct) */
-            //Produit prod1 = new("clavier", "Cool", DateTime.Now); // à la place de => Produit prod1 = new Produit("clavier", "Cool", DateTime.Now);
+            /* Produit prod1 = new("clavier", "Cool", DateTime.Now); // à la place de => Produit prod1 = new Produit("clavier", "Cool", DateTime.Now);
 
-            //// Utilisation du Déconstructeur 
-            //var (name, description, dateCreation) = prod1;
+            // Utilisation du Déconstructeur 
+            var (name, description, dateCreation) = prod1;
 
-            //Console.WriteLine($"Nom: {name} - Description: {description} - Date de création: {dateCreation}");
+            Console.WriteLine($"Nom: {name} - Description: {description} - Date de création: {dateCreation}");
 
-            //List<Produit> prodList = new(); // à la place de => List<Produit> prodList = new List<Produit>()
-            //List<Order> orderList = new();
+            List<Produit> prodList = new(); // à la place de => List<Produit> prodList = new List<Produit>()
+            List<Order> orderList = new(); */
 
 
 

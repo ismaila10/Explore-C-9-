@@ -63,6 +63,14 @@ record Order
     }
 }
 
-public record Person(string FirstName, string LastName, string[] PhoneNumbers);
+//public record Person(string FirstName, string LastName, string[] PhoneNumbers);
+
+public abstract record Person(string FirstName, string LastName);
+
+public record Teacher(string FirstName, string LastName, int Grade)
+    : Person(FirstName, LastName);
+
+public record Student(string FirstName, string LastName, int Grade)
+    : Person(FirstName, LastName);
 
 
